@@ -33,7 +33,7 @@ export default function ExploreSimilarImagesPage() {
 
 async function getImageData(slug: string) {
   try {
-    const { data } = await axios.post(`${`${import.meta.env.VITE_HOST}/search` || "/api/search"}`, {
+    const { data } = await axios.post(`/search`, {
       q: '*',
       per_page: 1,
       vector_query: `embedding:([], id:${slug})`,

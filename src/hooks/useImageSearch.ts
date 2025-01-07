@@ -23,7 +23,7 @@ export default function useImageSearch(searchParameters: SearchParams) {
     try {
       console.log(import.meta.env.VITE_HOST);
       
-      const { data } = await axios.post(`${`${import.meta.env.VITE_HOST}/search` || "/api/search"}`, {
+      const { data } = await axios.post(`/search`, {
         ...searchParameters,
         page: page.current,
       });
